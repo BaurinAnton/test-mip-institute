@@ -1,0 +1,35 @@
+{
+  "kind": "collectionType",
+  "collectionName": "index_numbers",
+  "info": {
+    "name": "index-number",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "idx": {
+      "type": "biginteger"
+    },
+    "program": {
+      "model": "program",
+      "via": "index_number"
+    },
+    "review": {
+      "model": "review",
+      "via": "index_number"
+    },
+    "teacher": {
+      "model": "teacher",
+      "via": "index_number"
+    },
+    "webinar": {
+      "model": "webinar",
+      "via": "index_number"
+    }
+  }
+}
