@@ -1,4 +1,4 @@
-name: api-mip-institute
+name: prod-api-mip-institute
 
 on:
   push:
@@ -36,7 +36,7 @@ jobs:
           file: ./Dockerfile
           builder: ${{ steps.buildx.outputs.name }}
           push: true
-          tags: ${{ secrets.DOCKER_HUB_USERNAME }}/api-mip-institute:${{ env.GITHUB_SHA_CUSTOMIZE }}
-          cache-from: type=registry,ref=${{ secrets.DOCKER_HUB_USERNAME }}/api-mip-institute:buildcache
-          cache-to: type=registry,ref=${{ secrets.DOCKER_HUB_USERNAME }}/api-mip-institute:buildcache,mode=max
+          tags: ${{ secrets.DOCKER_HUB_USERNAME }}/api-mip-institute:prod-${{ env.GITHUB_SHA_CUSTOMIZE }}
+          cache-from: type=registry,ref=${{ secrets.DOCKER_HUB_USERNAME }}/api-mip-institute:prod-buildcache
+          cache-to: type=registry,ref=${{ secrets.DOCKER_HUB_USERNAME }}/api-mip-institute:prod-buildcache,mode=max
 
